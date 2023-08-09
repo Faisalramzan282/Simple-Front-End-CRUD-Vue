@@ -4,6 +4,9 @@ import SignUpview from '../views/SignUpview.vue'
 import Loginview from '../views/LoginView.vue'
 import DisplayList from '../views/DisplayListView.vue'
 import createTask from '../views/createTodoview.vue';
+import ViewTaskView from '../views/ViewTaskview.vue';
+// import UpdateTask from  '../views/UpdateTaskview';
+import UpdateTask from '../views/UpdateTaskview.vue'
 const routes = [
   {
     path: '/',
@@ -37,6 +40,16 @@ const routes = [
         path:'createTask',
         name: 'createTask',
         component: createTask
+      }, 
+      {
+        path:'viewTask',
+        name: 'viewTask',
+        component: ViewTaskView
+      },
+      {
+        path:'updateTask',
+        name: 'updateTask',
+        component: UpdateTask
       }
     ]
   }

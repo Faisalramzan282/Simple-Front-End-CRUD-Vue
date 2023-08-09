@@ -3,20 +3,28 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    userData: []
+    userData: [],
+    tasks: []
   },
   
   mutations: {
     CREATE_USER(state, payload)
     {
       state.userData = payload;
+    },
+    CREATE_TASKS(state, task) {
+      state.userData.push(task);
+    },
+    CREATE_TASK_USER(state,formData)
+    {
+      state.tasks.push(formData);
     }
   },
   actions: {
     createUser({commit}, form)
     {
-     commit('CREATE_USER', form)
-     console.log(form.password);
+    commit('CREATE_USER', form)
+    console.log(form.password);
     localStorage.setItem('userEmail', form.email);
     localStorage.setItem('userPassword', form.password);
     // console.log(userData);
@@ -24,16 +32,23 @@ export default createStore({
     validateUser({commit},loginForm)
     {
       commit('CREATE_USER', loginForm);
-    //  const emailVal = localStorage.getItem('userEmail');
-    //  const passval = localStorage.getItem('userPassword');
-     
-     
+    
+    },
+   
+    createTask( {commit}, form ) {
+      commit('CREATE_TASK_USER', form)
+      // localStorage.setItem('formTasks', this.state.tasks);
+      // console.log(localStorage.getItem('formTasks'))
+
     }
   },
   getters: {
     getUser(state)
     {
       return state.userData;
+    },
+    getTasks(state){
+       return state.tasks;
     }
   },
 })

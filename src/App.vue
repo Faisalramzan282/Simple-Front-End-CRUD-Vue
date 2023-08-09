@@ -1,9 +1,10 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/signUp" >SignUp</router-link>
-  </nav>
+  <div class="gap-2 p-10">
+    <router-link class="text-white p-4 bg-slate-600 mr-2 rounded" to="/signUp">SignUp</router-link> 
+     <router-link class="text-white p-4 bg-slate-600 rounded"   to="/login">Login</router-link>
+
+  </div>
+  
   <router-view/>
 </template>
 
@@ -25,7 +26,5 @@ nav a {
   color: #2c3e50;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+
 </style>
