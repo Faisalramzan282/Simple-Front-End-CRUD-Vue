@@ -40,6 +40,12 @@ export default createStore({
       // localStorage.setItem('formTasks', this.state.tasks);
       // console.log(localStorage.getItem('formTasks'))
 
+    }, 
+    updateTask(_, {id,payload})
+    {
+      console.log("payload in store", payload);
+      console.log("id in store", id);
+      this.state.tasks.splice(id, 1 , payload);
     }
   },
   getters: {
